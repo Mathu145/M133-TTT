@@ -1,0 +1,217 @@
+body {
+    margin-top: 40px;
+    /*font-family: 'Press Start 2P';
+    font-family: 'Oranienbaum', serif;*/
+    font-size: 1.5em;
+    font-family: 'Black Ops One', cursive;
+    font-weight: bold;
+    text-align: center;
+    background-color: hsla(213, 100%, 50%, 0.05);
+}
+
+#field {
+    display: inline-flex;
+}
+
+#right {
+    margin-right: auto;
+}
+
+#center {
+    margin: auto;
+}
+
+#left {
+    margin-left: auto;
+}
+
+.box {
+    background-color: hsla(213, 100%, 50%, 0.8);
+    width: 6em;
+    height: 6em;
+    padding: 10px;
+    margin: 6px 10px 20px 16px;
+    border: 16px black solid;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: hsla(213, 100%, 50%, 1);
+}
+
+.square {
+    font-size: 12em
+}
+
+.button {
+    border-radius: 10px;
+    background-color: hsla(213, 100%, 50%, 0.8);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 3.5em;
+    font-family: 'Black Ops One';
+    padding: 15px;
+    width: 40%;
+    transition: all 0.25s;
+    cursor: pointer;
+    margin: 25px 10px 0px 10px;
+    margin-bottom: 1em;
+}
+
+.button:hover {
+    background-color: hsla(213, 100%, 50%, 1);
+}
+
+.XO {
+    font-size: 5em;
+    text-align: center;
+}
+
+#X{
+    color: #FFFFFF;
+}
+
+#O{
+    color: #FFFFFF;
+}
+
+h1 {
+    font-family: 'Press Start 2P';
+    font-size: 4em;
+}
+
+hr {
+    width: 60%;
+    border-top: 9px solid hsla(213, 100%, 50%, 1);
+    border-radius: 40%;
+}
+
+p {
+    font-family: 'Oranienbaum';
+    font-size: 1em;
+}
+
+
+/*There is the Mediaqueries for Fulscreens, Tablet, and Smartphones*/
+
+@media screen and (max-width: 1680px) {
+    body {
+        font-size: 1em;
+    }
+    .box {
+        width: 2em;
+        height: 2em;
+    }
+    .button {
+        font-size: 100%;
+        width: 80%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    hr {
+        width: 90%;
+    }
+    .XO {
+        font-size: 2em;
+        margin: 0px 0px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    body {
+        font-size: 1em;
+    }
+    .box {
+        width: 2em;
+        height: 2em;
+    }
+    .button {
+        font-size: 100%;
+        width: 80%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    hr {
+        width: 90%;
+    }
+    .XO {
+        font-size: 2em;
+        margin: 0px 0px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    body {
+        font-size: 1em;
+    }
+    .box {
+        width: 2em;
+        height: 2em;
+    }
+    .button {
+        font-size: 100%;
+        width: 80%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    hr {
+        width: 90%;
+    }
+    .XO {
+        font-size: 2em;
+        margin: 0px 0px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    body {
+        font-size: 1em;
+    }
+    .box {
+        width: 2em;
+        height: 2em;
+    }
+    .button {
+        font-size: 100%;
+        width: 80%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    hr {
+        width: 90%;
+    }
+    .XO {
+        font-size: 2em;
+        margin: 0px 0px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 1em;
+    }
+    .box {
+        width: 2em;
+        height: 2em;
+    }
+    .button {
+        font-size: 100%;
+        width: 80%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    hr {
+        width: 90%;
+    }
+    .XO {
+        font-size: 2em;
+        margin: 0px 0px 0px 0px;
+    }
+}

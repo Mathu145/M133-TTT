@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Tic-Tac-Toe</h1>
+
+    <p>Zum Spielen bitte abwechselnd in die Spielfelder klicken!</p>
+
+    <!--Buttons erstellen-->
+
+    <div class="feld" id="feld" style="display:none;">
+
+        <input type="button" id="btn1" class="button" value=" " onclick="btn('btn1')" />
+        <input type="button" id="btn2" class="button" value=" " onclick="btn('btn2')" />
+        <input type="button" id="btn3" class="button" value=" " onclick="btn('btn3')" /> <br>
+        <input type="button" id="btn4" class="button" value=" " onclick="btn('btn4')" />
+        <input type="button" id="btn5" class="button" value=" " onclick="btn('btn5')" />
+        <input type="button" id="btn6" class="button" value=" " onclick="btn('btn6')" /> <br>
+        <input type="button" id="btn7" class="button" value=" " onclick="btn('btn7')" />
+        <input type="button" id="btn8" class="button" value=" " onclick="btn('btn8')" />
+        <input type="button" id="btn9" class="button" value=" " onclick="btn('btn9')" />
+
+    </div>
+
+    <!--Benutzer angaben-->
+    <form class="benutzer" id="benutzer">
+        <p id="email">Bitte nur E-Mail Adresse eingeben</p>
+        <input type="radio" name="radioButton" value="menschvsmensch" checked> Mensch vs Mensch <br>
+        <b>Spieler 1 (x): <input type="email" id="spieler1" name="email" placeholder="spieler1@gmail.com" required ></b> <br>
+
+        <b>Spieler 2 (o): <input type="email" id="spieler2" name="email" placeholder="spieler2@gmail.com" required></b>
+        <hr>
+        <input type="radio" name="radioButton" value="mensch"> Mensch vs PC <br>
+
+        <b>Spieler 2 (o): <input type="email" name="email" placeholder="spieler2@gmail.com"></b>
+        <hr>
+        <input type="radio" name="radioButton" value="PC vs PC"> PC vs PC
+        <hr>
+        <input id="start" type="button" value="Start">
+        <input id="reset" type="reset" value="Reset" />
+
+    </form>
+    <script>
+        $(function() {
+            $("#spieler1").focus();
+
+            $("#start").on("click", function() {
+                if (!$("#benutzer")[0].checkValidity()) {
+                    alert("Bitte gültige E-Mail Adresse eingeben");
+                } else {
+                    $("#feld").show();
+                }
+            });
+
+            $("#reset").on("click", function() {
+                $(".button").prop("value", " ");
+            });
+        });
+
+
+
+        var eins = document.getElementById("btn1")
+        var zwei = document.getElementById("btn2")
+        var drei = document.getElementById("btn3")
+        var vier = document.getElementById("btn4")
+        var fünf = document.getElementById("btn5")
+        var sechs = document.getElementById("btn6")
+        var sieben = document.getElementById("btn7")
+        var acht = document.getElementById("btn8")
+        var neun = document.getElementById("btn9")
+
+        var chance = 0
+        var coun = 0
+
+        //gewinnt Spieler 1
+        function spieler1gewinnt() {
+            coun++
+            if (eins.value == "x" && zwei.value == "x" && drei.value == "x") alert("Spieler 1 hat gewonnen")
+            else if (eins.value == "x" && vier.value == "x" && sieben.value == "x") alert("Spieler 1 hat gewonnen")
+            else if (eins.value == "x" && fünf.value == "x" && neun.value == "x") alert("Spieler 1 hat gewonnen")
+            else if (zwei.value == "x" && fünf.value == "x" && acht.value == "x") alert("Spieler 1 hat gewonnen")
+            else if (drei.value == "x" && fünf.value == "x" && sieben.value == "x") alert("Spieler 1 hat gewonnen")
+            else if (vier.value == "x" && fünf.value == "x" && sechs.value == "x") alert("Spieler 1 hat gewonnen")
+            else if (drei.value == "x" && sechs.value == "x" && neun.value == "x") alert("Spieler 1 hat gewonnen")
+            else if (sieben.value == "x" && acht.value == "x" && neun.value == "x") alert("Spieler 1 hat gewonnen")
+            else if (coun == 9) alert("unentschieden")
+        }
+
+        //gewinnt Spieler 2
+        function spieler2gewinnt() {
+            console.log("Bla");
+            coun++
+            if (eins.value == "o" && zwei.value == "o" && drei.value == "o") alert("Spieler 2 hat gewonnen")
+            else if (eins.value == "o" && vier.value == "o" && sieben.value == "o") alert("Spieler 2 hat gewonnen")
+            else if (eins.value == "o" && fünf.value == "o" && neun.value == "o") alert("Spieler 2 hat gewonnen")
+            else if (zwei.value == "o" && fünf.value == "o" && acht.value == "o") alert("Spieler 2 hat gewonnen")
+            else if (drei.value == "o" && fünf.value == "o" && sieben.value == "o") alert("Spieler 2 hat gewonnen")
+            else if (vier.value == "o" && fünf.value == "o" && sechs.value == "o") alert("Spieler 2 hat gewonnen")
+            else if (drei.value == "o" && sechs.value == "o" && neun.value == "o") alert("Spieler 2 hat gewonnen")
+            else if (sieben.value == "o" && acht.value == "o" && neun.value == "o") alert("Spieler 2 hat gewonnen")
+        }
+
+        //btn erkennen
+        function btn(nummer) {
+            var button = document.getElementById(nummer)
+            if (chance == 0) {
+                button.value = "x"
+                chance = 1
+                button.disabled = true
+                spieler1gewinnt()
+            } else if (chance == 1) {
+                button.value = "o"
+                chance = 0
+                button.disabled = true
+                spieler2gewinnt()
+            }
+        }
+
+    </script>
+
+</body>
+
+
+</html>
